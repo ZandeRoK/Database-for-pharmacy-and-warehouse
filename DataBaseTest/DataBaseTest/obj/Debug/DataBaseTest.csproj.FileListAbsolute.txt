@@ -1,0 +1,14 @@
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\bin\Debug\DataBaseTest.exe.config
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\bin\Debug\DataBase\DB_Main.mdf
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\bin\Debug\DataBase\DB_Main_log.ldf
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\bin\Debug\DataBaseTest.exe
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\bin\Debug\DataBaseTest.pdb
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\obj\Debug\DataBaseTest.csprojResolveAssemblyReference.cache
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\obj\Debug\DataBaseTest.Form1.resources
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\obj\Debug\DataBaseTest.Properties.Resources.resources
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\obj\Debug\DataBaseTest.csproj.GenerateResource.Cache
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\obj\Debug\DataBaseTest.exe
+c:\users\вадим\documents\visual studio 2015\Projects\DataBaseTest\DataBaseTest\obj\Debug\DataBaseTest.pdb
+C:\Users\Вадим\Documents\Visual Studio 2015\Projects\DataBaseTest\DataBaseTest\obj\Debug\DataBaseTest.FormsForPharmacy.CreateOrder.resources
+C:\Users\Вадим\Documents\Visual Studio 2015\Projects\DataBaseTest\DataBaseTest\obj\Debug\DataBaseTest.FormsForWarehouse.WarehouseForm.resources
+C:\Users\Вадим\Documents\Visual Studio 2015\Projects\DataBaseTest\DataBaseTest\obj\Debug\DataBaseTest.FormsForWarehouse.AddNewDrug.resources
