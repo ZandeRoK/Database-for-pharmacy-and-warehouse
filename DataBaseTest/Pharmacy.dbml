@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_Main" Class="PharmacyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DataBase\DB_Main.mdf;Integrated Security=True" SettingsObjectName="DataBaseTest.Properties.Settings" SettingsPropertyName="DB_MainConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[Order]" Member="Order">
+    <Type Name="Order">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdDrug" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Status_Order" Member="Status" ThisKey="IdStatus" OtherKey="Id" Type="Status" IsForeignKey="true" />
+      <Association Name="Warehouse_Order" Member="Warehouse" ThisKey="IdDrug" OtherKey="Id" Type="Warehouse" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoleUser" Member="RoleUser">
+    <Type Name="RoleUser">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="RoleUser_User" Member="User" ThisKey="Id" OtherKey="IdRole" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Status" Member="Status">
+    <Type Name="Status">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameStatus" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Status_Order" Member="Order" ThisKey="Id" OtherKey="IdStatus" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="User">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstAndLastNames" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Password" Type="System.String" DbType="NChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="IdRole" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[e-mail]" Member="e_mail" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="RoleUser_User" Member="RoleUser" ThisKey="IdRole" OtherKey="Id" Type="RoleUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Warehouse" Member="Warehouse">
+    <Type Name="Warehouse">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameDrug" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Warehouse_Order" Member="Order" ThisKey="Id" OtherKey="IdDrug" Type="Order" />
+      <Association Name="Warehouse_Store" Member="Store" ThisKey="Id" OtherKey="IdDrug" Type="Store" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Store" Member="Store">
+    <Type Name="Store">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdDrug" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Warehouse_Store" Member="Warehouse" ThisKey="IdDrug" OtherKey="Id" Type="Warehouse" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>
